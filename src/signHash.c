@@ -80,6 +80,11 @@ UX_DEF(
 void handleSignHash(uint8_t p1, uint8_t p2, uint8_t *buffer, uint16_t len,
                     /* out */ volatile unsigned int *flags,
                     /* out */ volatile unsigned int *tx) {
+	UNUSED(p1);
+	UNUSED(p2);
+	UNUSED(tx);
+	UNUSED(len); // FIXME: len should be used!
+
     // Read the index of the signing key. U4LE is a helper macro for
     // converting a 4-byte buffer to a uint32_t.
     ctx->keyIndex = U4LE(buffer, 0);
